@@ -34,7 +34,7 @@ app.get('/api/database/image/:imageID', (req, res) => {
             return res.status(400).json({ success: false, msg: "record not founded" })
         }
         else {
-            let resultTest = Object.values(JSON.parse(JSON.stringify(result)))
+            let resultTest = JSON.parse(JSON.stringify(result))
             const base64Image = Buffer.from(resultTest[0].image.data, 'base64')
             res.writeHead(200, {
                 'Content-Type': 'image/png',
