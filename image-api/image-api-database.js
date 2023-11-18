@@ -35,13 +35,13 @@ app.get('/api/database/image/:imageID', (req, res) => {
         }
         else {
             let resultTest = JSON.parse(JSON.stringify(result))
+            console.log(resultTest)
             const base64Image = Buffer.from(resultTest[0].image.data, 'base64')
             res.writeHead(200, {
                 'Content-Type': 'image/png',
                 'Content-Length': base64Image.length
             })
             res.end(base64Image)
-            
         }
     })
 })

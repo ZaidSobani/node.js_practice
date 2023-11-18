@@ -1,9 +1,10 @@
 
 class faq {
-    constructor(id, question, answer, createdDate, updatedDate) {
+    constructor(id, question, answer, published, createdDate, updatedDate) {
         this.id = id
         this.question = question
         this.answer = answer
+        this.published = published
         this.createdDate = createdDate
         this.updatedDate = updatedDate
     }
